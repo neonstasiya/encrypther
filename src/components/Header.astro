@@ -1,0 +1,169 @@
+---
+/**
+ * Header Component
+ * 
+ * Sticky navigation header with logo, menu items, and donate button.
+ * Matches the original EncryptHer design with backdrop blur and transparency.
+ */
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="border-b border-border bg-card/50 backdrop-blur-sm sticky top-0 z-50">
+  <div class="container mx-auto px-4 flex items-center justify-between py-1">
+    <!-- Logo and Brand -->
+    <a href="/" class="flex items-center gap-0 hover:opacity-80 transition-opacity">
+      <img 
+        src="/images/encrypther-logo.png" 
+        alt="EncryptHer logo" 
+        class="h-28 w-28 object-cover -mr-2"
+        width="112"
+        height="112"
+      />
+      <h1 class="text-2xl font-bold text-foreground">EncryptHer</h1>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex items-center gap-6">
+      <a 
+        href="/about" 
+        class="text-muted-foreground hover:text-foreground transition-colors px-4 py-2"
+        class:list={[currentPath === '/about' && 'text-foreground font-semibold']}
+      >
+        About
+      </a>
+      
+      <a 
+        href="/#what-we-do" 
+        class="text-muted-foreground hover:text-foreground transition-colors px-4 py-2"
+      >
+        What We Do
+      </a>
+      
+      <!-- Programs Dropdown -->
+      <div class="relative group">
+        <button class="text-muted-foreground hover:text-foreground transition-colors px-4 py-2 flex items-center gap-1">
+          Programs
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        
+        <div class="absolute left-0 mt-2 w-64 bg-card border border-border rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+          <div class="p-2">
+            <a 
+              href="/online-privacy" 
+              class="block px-4 py-3 rounded-md hover:bg-accent hover:text-accent-foreground transition-colors"
+            >
+              <div class="font-medium text-sm mb-1">Online Privacy</div>
+              <p class="text-xs text-muted-foreground">Digital security & privacy</p>
+            </a>
+            
+            <a 
+              href="/public-safety" 
+              class="block px-4 py-3 rounded-md hover:bg-accent hover:text-accent-foreground transition-colors"
+            >
+              <div class="font-medium text-sm mb-1">Public Safety</div>
+              <p class="text-xs text-muted-foreground">Awareness & protection</p>
+            </a>
+            
+            <a 
+              href="/travel-safety" 
+              class="block px-4 py-3 rounded-md hover:bg-accent hover:text-accent-foreground transition-colors"
+            >
+              <div class="font-medium text-sm mb-1">Travel Safety</div>
+              <p class="text-xs text-muted-foreground">Safe travel practices</p>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <a 
+        href="/digital-advocacy" 
+        class="text-muted-foreground hover:text-foreground transition-colors px-4 py-2"
+        class:list={[currentPath === '/digital-advocacy' && 'text-foreground font-semibold']}
+      >
+        Advocate
+      </a>
+      
+      <a 
+        href="/contact" 
+        class="text-muted-foreground hover:text-foreground transition-colors px-4 py-2"
+        class:list={[currentPath === '/contact' && 'text-foreground font-semibold']}
+      >
+        Contact
+      </a>
+    </nav>
+
+    <!-- Donate Button -->
+    <a 
+      href="/donate"
+      class="hidden md:inline-flex items-center justify-center rounded-md bg-primary px-6 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+    >
+      Donate
+    </a>
+
+    <!-- Mobile Menu Button -->
+    <button 
+      id="mobile-menu-button"
+      class="md:hidden p-2 text-foreground hover:text-primary transition-colors"
+      aria-label="Toggle menu"
+    >
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div 
+    id="mobile-menu"
+    class="hidden md:hidden border-t border-border bg-card"
+  >
+    <nav class="container mx-auto px-4 py-4 flex flex-col gap-2">
+      <a href="/" class="px-4 py-2 text-muted-foreground hover:text-foreground hover:bg-muted rounded-md transition-colors">
+        Home
+      </a>
+      <a href="/about" class="px-4 py-2 text-muted-foreground hover:text-foreground hover:bg-muted rounded-md transition-colors">
+        About
+      </a>
+      <a href="/#what-we-do" class="px-4 py-2 text-muted-foreground hover:text-foreground hover:bg-muted rounded-md transition-colors">
+        What We Do
+      </a>
+      
+      <div class="px-4 py-2 text-sm font-semibold text-foreground">Programs</div>
+      <a href="/online-privacy" class="px-8 py-2 text-muted-foreground hover:text-foreground hover:bg-muted rounded-md transition-colors text-sm">
+        Online Privacy
+      </a>
+      <a href="/public-safety" class="px-8 py-2 text-muted-foreground hover:text-foreground hover:bg-muted rounded-md transition-colors text-sm">
+        Public Safety
+      </a>
+      <a href="/travel-safety" class="px-8 py-2 text-muted-foreground hover:text-foreground hover:bg-muted rounded-md transition-colors text-sm">
+        Travel Safety
+      </a>
+      
+      <a href="/digital-advocacy" class="px-4 py-2 text-muted-foreground hover:text-foreground hover:bg-muted rounded-md transition-colors">
+        Advocate
+      </a>
+      <a href="/contact" class="px-4 py-2 text-muted-foreground hover:text-foreground hover:bg-muted rounded-md transition-colors">
+        Contact
+      </a>
+      <a href="/donate" class="mx-4 mt-2 px-4 py-2 bg-primary text-primary-foreground hover:bg-primary/90 rounded-md transition-colors text-center font-medium">
+        Donate
+      </a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  // Mobile menu toggle
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  
+  if (mobileMenuButton && mobileMenu) {
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  }
+</script>
+
