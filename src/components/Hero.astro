@@ -48,23 +48,23 @@ const {
     </>
   )}
   
-  <div class="container mx-auto text-center max-w-4xl relative z-10">
+  <div class="container mx-auto text-center max-w-5xl relative z-10">
     {badge && (
-      <div class="inline-flex items-center gap-2 bg-secondary px-4 py-2 rounded-full mb-6">
+      <div class="inline-flex items-center gap-2 bg-secondary px-5 py-2.5 rounded-full mb-8">
         {badgeIcon && (
           <span class="inline-flex items-center justify-center text-primary icon-container" set:html={badgeIcon} />
         )}
-        <span class="text-sm font-medium text-secondary-foreground">{badge}</span>
+        <span class="text-base font-semibold text-secondary-foreground tracking-wide">{badge}</span>
       </div>
     )}
     
     <h1 
-      class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-foreground"
+      class="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-8 text-foreground leading-tight tracking-tight"
       set:html={title}
     />
     
     {subtitle && (
-      <p class="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+      <p class="text-xl md:text-2xl text-muted-foreground mb-10 max-w-3xl mx-auto leading-relaxed">
         {subtitle}
       </p>
     )}
@@ -74,7 +74,7 @@ const {
         {primaryCTA && (
           <a 
             href={primaryCTA.href}
-            class="inline-flex items-center justify-center rounded-md bg-primary px-8 py-3 text-lg font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+            class="inline-flex items-center justify-center rounded-lg bg-primary px-10 py-4 text-lg font-semibold text-primary-foreground hover:bg-primary/90 transition-colors shadow-lg hover:shadow-xl"
           >
             {primaryCTA.text}
           </a>
@@ -83,7 +83,7 @@ const {
         {secondaryCTA && (
           <a 
             href={secondaryCTA.href}
-            class="inline-flex items-center justify-center rounded-md border border-border bg-background px-8 py-3 text-lg font-medium hover:bg-accent hover:text-accent-foreground transition-colors"
+            class="inline-flex items-center justify-center rounded-lg border-2 border-border bg-background px-10 py-4 text-lg font-semibold hover:bg-accent hover:text-accent-foreground transition-colors"
           >
             {secondaryCTA.text}
           </a>
