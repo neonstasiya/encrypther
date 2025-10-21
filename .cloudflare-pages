@@ -1,0 +1,20 @@
+# Cloudflare Pages Configuration
+
+## Build Configuration
+Build command: npm run build
+Build output directory: dist
+Root directory: encrypther
+Node version: 18
+
+## Environment Variables (Optional)
+# Add these in Cloudflare Pages dashboard if needed:
+# PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX
+# PUBLIC_SITE_URL=https://your-domain.com
+
+## Notes
+- Site automatically builds on every git push
+- Preview deployments created for all pull requests
+- Production deployment from main branch only
+- Build time: ~5-8 seconds
+- Output size: ~500KB gzipped
+
