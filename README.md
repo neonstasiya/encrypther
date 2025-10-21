@@ -105,52 +105,58 @@ This generates optimized static files in the `dist/` directory.
 
 ## 🎨 Customization Guide
 
-### Update SEO Settings
+**📖 Complete configuration guide:** [docs/user_guides/CONFIGURATION_GUIDE.md](docs/user_guides/CONFIGURATION_GUIDE.md)
 
-Edit `src/config/seo.config.ts` to customize meta tags, site title, description, and organization details.
+### All Settings Are in Config Files
 
-```typescript
-export const seoConfig = {
-  siteName: 'EncryptHer',
-  siteUrl: 'https://your-domain.com', // Update with your domain
-  defaultTitle: 'EncryptHer - Your Safety, Your Privacy, Your Power',
-  // ... more settings
-};
+Everything you need to customize is in three easy-to-edit files:
+
+```
+src/config/
+├── seo.config.ts          ← SEO, titles, contact info
+├── social-media.config.ts ← Social media links
+└── analytics.config.ts    ← Google Analytics, Cloudflare
 ```
 
-### Configure Social Media
+### Quick Examples
 
-Edit `src/config/social-media.config.ts` to add or update social media links:
-
+**Update SEO Settings:**
 ```typescript
+// src/config/seo.config.ts
+siteUrl: 'https://your-domain.com',  // Your domain
+twitterHandle: '@YourHandle',        // Your Twitter
+```
+
+**Add Social Media:**
+```typescript
+// src/config/social-media.config.ts
 twitter: {
   url: 'https://twitter.com/YOUR_HANDLE',
-  enabled: true, // Set to true when account is created
+  enabled: true,  // Icons appear automatically
 },
 ```
 
-Social media icons will automatically appear in the footer when enabled.
-
-### Enable Analytics
-
-Edit `src/config/analytics.config.ts`:
-
+**Enable Analytics:**
 ```typescript
+// src/config/analytics.config.ts
 googleAnalytics: {
-  enabled: true, // Change to true
-  measurementId: 'G-XXXXXXXXXX', // Add your GA4 ID
+  enabled: true,
+  measurementId: 'G-XXXXXXXXXX',
 },
 ```
 
-### Update Content
-
-Content is organized in `src/content/`. See the [Content README](./src/content/README.md) for detailed instructions on how to edit content using Markdown.
+**Update Content:**  
+Content is in `src/content/`. See [Content README](src/content/README.md) for the complete editing guide.
 
 ## 🌐 Deployment
 
-This site is designed to deploy seamlessly on Cloudflare Pages. See [DEPLOYMENT.md](./DEPLOYMENT.md) for complete deployment instructions.
+This site is designed to deploy seamlessly on Cloudflare Pages. 
 
-### Quick Deploy to Cloudflare Pages
+**📖 For detailed deployment instructions, see:**
+- **Quick Start (15 min):** [docs/user_guides/QUICK_START.md](docs/user_guides/QUICK_START.md)
+- **Technical Guide:** [docs/machine_guides/DEPLOYMENT.md](docs/machine_guides/DEPLOYMENT.md)
+
+### Quick Deploy Summary
 
 1. Connect your GitHub repository to Cloudflare Pages
 2. Set build command: `npm run build`
@@ -199,9 +205,11 @@ Target Lighthouse scores: 90+ in all categories (Performance, Accessibility, Bes
 
 ## 📝 Content Management
 
-Non-technical editors can update content using Markdown files in the `src/content/` directory. Each page has its own content directory with well-documented frontmatter.
+Non-technical editors can update content using Markdown files in the `src/content/` directory.
 
-See [Content README](./src/content/README.md) for a complete guide.
+**📖 Complete content editing guide:** [src/content/README.md](src/content/README.md)
+
+Each page has its own content directory with well-documented frontmatter for easy editing.
 
 ## 🤝 Contributing
 
@@ -222,8 +230,21 @@ EncryptHer is a mission-driven organization. If you'd like to contribute to the 
 - **General Inquiries:** info@encrypther.org
 - **Media Inquiries:** media@encrypther.org
 
-## 📚 Learn More
+## 📚 Documentation
 
+### User Guides (For Humans)
+- **[Quick Start Guide](docs/user_guides/QUICK_START.md)** - Deploy in 15 minutes
+- **[Configuration Guide](docs/user_guides/CONFIGURATION_GUIDE.md)** - All settings explained
+- **[File Locations](docs/user_guides/FILE_LOCATIONS.md)** - Where to find everything
+- **[Content Guide](src/content/README.md)** - How to edit content
+
+### Technical Documentation (For Developers)
+- **[Deployment Guide](docs/machine_guides/DEPLOYMENT.md)** - Technical deployment details
+- **[SEO Implementation](docs/machine_guides/SEO_IMPLEMENTATION_SUMMARY.md)** - SEO architecture
+- **[Performance](docs/machine_guides/PERFORMANCE_IMPROVEMENTS.md)** - Performance optimizations
+- **[Project Status](docs/machine_guides/FINAL_STATUS.md)** - Complete overview
+
+### External Resources
 - [Astro Documentation](https://docs.astro.build)
 - [Tailwind CSS Documentation](https://tailwindcss.com/docs)
 - [Cloudflare Pages Documentation](https://developers.cloudflare.com/pages)

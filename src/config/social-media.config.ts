@@ -1,18 +1,39 @@
 /**
  * Social Media Configuration
  * 
- * Configure your social media presence here.
- * Set `enabled: true` for platforms you want to display on the website.
- * Comment out or set `enabled: false` for platforms not yet active.
+ * ============================================================================
+ * LOCATION: src/config/social-media.config.ts
+ * ============================================================================
+ * 
+ * This file controls which social media icons appear in the website footer.
+ * Icons only show up when you set `enabled: true` for that platform.
+ * 
+ * HOW IT WORKS:
+ * 1. When enabled = false: Icon doesn't appear anywhere on the site
+ * 2. When enabled = true: Icon appears in footer with clickable link
+ * 3. Icons automatically update across the entire site
+ * 
+ * WHEN TO UPDATE:
+ * - When you create a new social media account
+ * - When you want to add/remove platforms from the footer
+ * - When social media handles change
+ * 
+ * STEPS TO ADD A PLATFORM:
+ * 1. Update the URL with your actual handle/page
+ * 2. Update the handle field (if applicable)
+ * 3. Change `enabled: false` to `enabled: true`
+ * 4. Save the file - icons appear automatically!
+ * 
+ * See: docs/user_guides/CONFIGURATION_GUIDE.md for detailed instructions
  */
 
 export interface SocialPlatform {
-  name: string;
-  url: string;
-  handle?: string;
-  enabled: boolean;
-  icon: string; // Lucide icon name
-  ariaLabel: string;
+  name: string;           // Platform name (e.g., 'Twitter', 'Facebook')
+  url: string;            // Full URL to your profile/page
+  handle?: string;        // Your username/handle (e.g., '@EncryptHer')
+  enabled: boolean;       // Set to true to show icon in footer
+  icon: string;           // Icon identifier (used by rendering system)
+  ariaLabel: string;      // Accessibility label for screen readers
 }
 
 export interface SocialMediaConfig {
@@ -27,78 +48,117 @@ export interface SocialMediaConfig {
 }
 
 export const socialMediaConfig: SocialMediaConfig = {
-  // Twitter/X
+  // ============================================================================
+  // TWITTER / X
+  // ============================================================================
+  // 🔧 TODO: Create Twitter/X account, then:
+  //    1. Replace 'encrypther' with your actual handle
+  //    2. Change enabled to true
   twitter: {
     name: 'Twitter',
-    url: 'https://twitter.com/encrypther', // Update with actual handle
-    handle: '@encrypther', // Update with actual handle
-    enabled: false, // Set to true when account is created
+    url: 'https://twitter.com/encrypther',     // 👈 Update this
+    handle: '@encrypther',                     // 👈 Update this
+    enabled: false,                            // 👈 Change to true when ready
     icon: 'Twitter',
     ariaLabel: 'Follow us on Twitter'
   },
 
-  // Facebook
+  // ============================================================================
+  // FACEBOOK
+  // ============================================================================
+  // 🔧 TODO: Create Facebook page, then:
+  //    1. Replace 'encrypther' with your actual page name
+  //    2. Change enabled to true
   facebook: {
     name: 'Facebook',
-    url: 'https://facebook.com/encrypther', // Update with actual page
-    enabled: false, // Set to true when page is created
+    url: 'https://facebook.com/encrypther',    // 👈 Update this
+    enabled: false,                            // 👈 Change to true when ready
     icon: 'Facebook',
     ariaLabel: 'Follow us on Facebook'
   },
 
-  // Instagram
+  // ============================================================================
+  // INSTAGRAM
+  // ============================================================================
+  // 🔧 TODO: Create Instagram account, then:
+  //    1. Replace 'encrypther' with your actual handle
+  //    2. Change enabled to true
   instagram: {
     name: 'Instagram',
-    url: 'https://instagram.com/encrypther', // Update with actual handle
-    handle: '@encrypther', // Update with actual handle
-    enabled: false, // Set to true when account is created
+    url: 'https://instagram.com/encrypther',   // 👈 Update this
+    handle: '@encrypther',                     // 👈 Update this
+    enabled: false,                            // 👈 Change to true when ready
     icon: 'Instagram',
     ariaLabel: 'Follow us on Instagram'
   },
 
-  // LinkedIn
+  // ============================================================================
+  // LINKEDIN
+  // ============================================================================
+  // 🔧 TODO: Create LinkedIn company page, then:
+  //    1. Replace 'encrypther' with your actual company page
+  //    2. Change enabled to true
   linkedin: {
     name: 'LinkedIn',
-    url: 'https://linkedin.com/company/encrypther', // Update with actual company page
-    enabled: false, // Set to true when page is created
+    url: 'https://linkedin.com/company/encrypther',  // 👈 Update this
+    enabled: false,                                  // 👈 Change to true when ready
     icon: 'Linkedin',
     ariaLabel: 'Connect with us on LinkedIn'
   },
 
-  // YouTube
+  // ============================================================================
+  // YOUTUBE
+  // ============================================================================
+  // 🔧 TODO: Create YouTube channel, then:
+  //    1. Replace '@encrypther' with your actual channel handle
+  //    2. Change enabled to true
   youtube: {
     name: 'YouTube',
-    url: 'https://youtube.com/@encrypther', // Update with actual channel
-    handle: '@encrypther', // Update with actual handle
-    enabled: false, // Set to true when channel is created
+    url: 'https://youtube.com/@encrypther',    // 👈 Update this
+    handle: '@encrypther',                     // 👈 Update this
+    enabled: false,                            // 👈 Change to true when ready
     icon: 'Youtube',
     ariaLabel: 'Subscribe to our YouTube channel'
   },
 
-  // TikTok
+  // ============================================================================
+  // TIKTOK
+  // ============================================================================
+  // 🔧 TODO: Create TikTok account, then:
+  //    1. Replace '@encrypther' with your actual handle
+  //    2. Change enabled to true
   tiktok: {
     name: 'TikTok',
-    url: 'https://tiktok.com/@encrypther', // Update with actual handle
-    handle: '@encrypther', // Update with actual handle
-    enabled: false, // Set to true when account is created
-    icon: 'Music', // Lucide doesn't have TikTok, using Music as placeholder
+    url: 'https://tiktok.com/@encrypther',     // 👈 Update this
+    handle: '@encrypther',                     // 👈 Update this
+    enabled: false,                            // 👈 Change to true when ready
+    icon: 'Music',  // Note: Using Music icon as placeholder
     ariaLabel: 'Follow us on TikTok'
   },
 
-  // GitHub (for open-source resources)
+  // ============================================================================
+  // GITHUB (for open-source resources)
+  // ============================================================================
+  // 🔧 TODO: If you plan to share code/resources on GitHub:
+  //    1. Replace 'encrypther' with your actual organization/username
+  //    2. Change enabled to true
   github: {
     name: 'GitHub',
-    url: 'https://github.com/encrypther', // Update with actual organization
-    enabled: false, // Set to true when repository is created
+    url: 'https://github.com/encrypther',      // 👈 Update this
+    enabled: false,                            // 👈 Change to true when ready
     icon: 'Github',
     ariaLabel: 'View our open-source resources on GitHub'
   },
 
-  // Email (Always available)
+  // ============================================================================
+  // EMAIL (Always Available)
+  // ============================================================================
+  // ✅ Pre-configured and enabled
+  // This appears as a mailto: link in the footer
   email: {
     name: 'Email',
-    url: 'mailto:info@encrypther.org',
-    enabled: true, // Email is always enabled
+    url: 'mailto:info@encrypther.org',         // Update if email changes
+    enabled: true,                             // Always enabled
     icon: 'Mail',
     ariaLabel: 'Email us at info@encrypther.org'
   }
