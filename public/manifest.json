@@ -12,15 +12,22 @@
   "dir": "ltr",
   "icons": [
     {
-      "src": "/images/encrypther-logo.png",
-      "sizes": "512x512",
+      "src": "/favicon-192x192.png",
+      "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
       "src": "/favicon.svg",
       "sizes": "any",
-      "type": "image/svg+xml"
+      "type": "image/svg+xml",
+      "purpose": "any"
     }
   ],
   "shortcuts": [
@@ -29,21 +36,21 @@
       "short_name": "Privacy",
       "description": "Learn about online privacy and security",
       "url": "/online-privacy",
-      "icons": [{ "src": "/images/encrypther-logo.png", "sizes": "192x192" }]
+      "icons": [{ "src": "/favicon-192x192.png", "sizes": "192x192" }]
     },
     {
       "name": "Travel Safety",
       "short_name": "Travel",
       "description": "Travel safety tips for women",
       "url": "/travel-safety",
-      "icons": [{ "src": "/images/encrypther-logo.png", "sizes": "192x192" }]
+      "icons": [{ "src": "/favicon-192x192.png", "sizes": "192x192" }]
     },
     {
       "name": "Digital Advocacy",
       "short_name": "Advocate",
       "description": "Join the fight for privacy rights",
       "url": "/digital-advocacy",
-      "icons": [{ "src": "/images/encrypther-logo.png", "sizes": "192x192" }]
+      "icons": [{ "src": "/favicon-192x192.png", "sizes": "192x192" }]
     }
   ]
 }

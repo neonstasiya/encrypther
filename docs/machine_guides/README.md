@@ -40,6 +40,23 @@
    - Core Web Vitals tracking
    - Browser compatibility
 
+### Additional Technical Documentation
+
+5. **[ANIMATION_PLAN.md](ANIMATION_PLAN.md)** - Animation Implementation
+   - Terminal decode effects
+   - Scroll animations
+   - Animation strategy and rationale
+
+6. **[DESIGN_PATTERNS.md](DESIGN_PATTERNS.md)** - Architecture Patterns
+   - Design patterns used in the project
+   - Component architecture
+   - Code organization principles
+
+7. **[IMPLEMENTATION_SUMMARY.md](IMPLEMENTATION_SUMMARY.md)** - Implementation Details
+   - Development history
+   - Component implementations
+   - Technical decisions
+
 ---
 
 ## 🎯 When To Use Each Document

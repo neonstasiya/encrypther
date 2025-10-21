@@ -9,7 +9,7 @@
     "astro": "astro",
     "build:analyze": "astro build --verbose",
     "check": "astro check",
-    "clean": "rm -rf dist .astro node_modules/.vite"
+    "clean": "powershell -Command \"Remove-Item -Recurse -Force -ErrorAction SilentlyContinue dist, .astro, node_modules/.vite\""
   },
   "dependencies": {
     "@astrojs/react": "^4.4.0",

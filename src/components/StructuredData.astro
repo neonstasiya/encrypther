@@ -42,9 +42,9 @@ const organizationSchema = {
   url: siteUrl,
   logo: {
     '@type': 'ImageObject',
-    url: `${siteUrl}/images/encrypther-logo.png`,
-    width: '112',
-    height: '112'
+    url: `${siteUrl}/apple-touch-icon.png`,
+    width: '180',
+    height: '180'
   },
   email: organization.email,
   ...(organization.telephone && { telephone: organization.telephone }),
@@ -110,7 +110,9 @@ const articleSchema = type === 'article' ? {
     name: organization.name,
     logo: {
       '@type': 'ImageObject',
-      url: `${siteUrl}/images/encrypther-logo.png`
+      url: `${siteUrl}/apple-touch-icon.png`,
+      width: '180',
+      height: '180'
     }
   },
   mainEntityOfPage: {
