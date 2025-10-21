@@ -1,0 +1,79 @@
+---
+/**
+ * CTA (Call-to-Action) Component
+ * 
+ * Attention-grabbing section with gradient background,
+ * heading, description, and action buttons.
+ */
+
+interface Props {
+  title: string;
+  description?: string;
+  primaryButton?: {
+    text: string;
+    href: string;
+  };
+  secondaryButton?: {
+    text: string;
+    href: string;
+  };
+  gradient?: boolean;
+}
+
+const {
+  title,
+  description,
+  primaryButton,
+  secondaryButton,
+  gradient = true,
+} = Astro.props;
+
+const bgClass = gradient 
+  ? 'bg-gradient-to-br from-primary to-accent text-white' 
+  : 'bg-muted';
+---
+
+<section class={`py-20 px-4 ${bgClass}`}>
+  <div class="container mx-auto max-w-4xl text-center">
+    <h2 class={`text-3xl md:text-4xl font-bold mb-4 ${gradient ? 'text-primary-foreground' : 'text-foreground'}`}>
+      {title}
+    </h2>
+    
+    {description && (
+      <p class={`text-lg mb-8 max-w-2xl mx-auto ${gradient ? 'text-primary-foreground/90' : 'text-muted-foreground'}`}>
+        {description}
+      </p>
+    )}
+    
+    {(primaryButton || secondaryButton) && (
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        {primaryButton && (
+          <a 
+            href={primaryButton.href}
+            class={`inline-flex items-center justify-center rounded-md px-8 py-3 text-lg font-medium transition-colors ${
+              gradient 
+                ? 'bg-white text-primary hover:bg-white/90' 
+                : 'bg-primary text-primary-foreground hover:bg-primary/90'
+            }`}
+          >
+            {primaryButton.text}
+          </a>
+        )}
+        
+        {secondaryButton && (
+          <a 
+            href={secondaryButton.href}
+            class={`inline-flex items-center justify-center rounded-md border px-8 py-3 text-lg font-medium transition-colors ${
+              gradient 
+                ? 'border-white bg-white/10 hover:bg-white/20 text-white' 
+                : 'border-border bg-background hover:bg-accent hover:text-accent-foreground'
+            }`}
+          >
+            {secondaryButton.text}
+          </a>
+        )}
+      </div>
+    )}
+  </div>
+</section>
+

@@ -1,0 +1,26 @@
+---
+/**
+ * Feature Grid Component
+ * 
+ * Grid layout for displaying feature cards.
+ * Responsive: 1 column on mobile, 2 on tablet, 3 on desktop.
+ */
+
+interface Props {
+  columns?: 2 | 3 | 4;
+  class?: string;
+}
+
+const { columns = 3, class: className } = Astro.props;
+
+const gridClass = {
+  2: 'md:grid-cols-2',
+  3: 'md:grid-cols-2 lg:grid-cols-3',
+  4: 'md:grid-cols-2 lg:grid-cols-4',
+}[columns];
+---
+
+<div class={`grid grid-cols-1 ${gridClass} gap-6 ${className || ''}`}>
+  <slot />
+</div>
+

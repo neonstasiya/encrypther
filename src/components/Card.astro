@@ -1,0 +1,79 @@
+---
+/**
+ * Card Component
+ * 
+ * Reusable card with optional icon, title, description, and content.
+ * Supports hover effects and clickable cards.
+ */
+
+interface Props {
+  title?: string;
+  description?: string;
+  icon?: string;
+  iconColor?: 'primary' | 'accent';
+  href?: string;
+  image?: string;
+  imageAlt?: string;
+  badge?: string;
+  class?: string;
+}
+
+const {
+  title,
+  description,
+  icon,
+  iconColor = 'primary',
+  href,
+  image,
+  imageAlt = '',
+  badge,
+  class: className,
+} = Astro.props;
+
+const CardTag = href ? 'a' : 'div';
+const cardClasses = `block border border-border rounded-lg overflow-hidden bg-card hover:shadow-lg transition-shadow ${href ? 'cursor-pointer' : ''} ${className || ''}`;
+---
+
+<CardTag href={href} class={cardClasses}>
+  {image && (
+    <div class="h-48 overflow-hidden">
+      <img 
+        src={image} 
+        alt={imageAlt}
+        class="w-full h-full object-cover"
+        loading="lazy"
+      />
+    </div>
+  )}
+  
+  <div class="p-6">
+    {badge && (
+      <span class="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-accent/10 text-accent-foreground mb-4">
+        {badge}
+      </span>
+    )}
+    
+    {icon && (
+      <div class={`h-12 w-12 rounded-full bg-${iconColor}/10 flex items-center justify-center mb-4`}>
+        <span class={`text-${iconColor}`} set:html={icon} />
+      </div>
+    )}
+    
+    {title && (
+      <h3 class="text-xl font-semibold mb-2 text-foreground">
+        {title}
+      </h3>
+    )}
+    
+    {description && (
+      <p class="text-muted-foreground text-sm mb-4">
+        {description}
+      </p>
+    )}
+    
+    <div class="text-foreground">
+      <slot />
+    </div>
+  </div>
+</CardTag>
+
