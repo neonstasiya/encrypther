@@ -11,7 +11,7 @@ EncryptHer empowers women through comprehensive educational courses and active a
 
 ## Educational Courses
 
-Comprehensive courses covering online privacy, travel safety, and public awareness—designed to protect and empower you in the digital and physical world; 
+Comprehensive courses covering online privacy, travel safety, and public awareness—designed to protect and empower you in the digital and physical world:::
 
 ## Advocacy Work
 
